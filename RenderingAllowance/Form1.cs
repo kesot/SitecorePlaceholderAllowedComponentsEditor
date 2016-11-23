@@ -133,8 +133,7 @@ namespace RenderingAllowance
             {
                 File.WriteAllLines(fileToSave.Key, fileToSave.Value);
             }
-
-            MessageBox.Show("Done");
+            toolStripStatusLabel1.Text = $"Done. {DateTime.Now:G}";
         }
 
         private int GetFieldIndex(string nodeFullPath, string fieldName, string[] lines, int offset = 0)
@@ -149,6 +148,11 @@ namespace RenderingAllowance
                 throw new InvalidOperationException($"Placeholder doesn't have field: ${fieldName}. No changes saved! Path: {nodeFullPath}");
             }
             return index.Value;
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            toolStripStatusLabel1.Text = "";
         }
     }
 }

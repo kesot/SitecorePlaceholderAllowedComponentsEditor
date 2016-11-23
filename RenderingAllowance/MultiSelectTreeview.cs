@@ -11,7 +11,7 @@ namespace RenderingAllowance
 
 		#region Selected Node(s) Properties
 
-		private List<TreeNode> m_SelectedNodes = null;		
+		private List<TreeNode> m_SelectedNodes = null;
 		public List<TreeNode> SelectedNodes
 		{
 			get
